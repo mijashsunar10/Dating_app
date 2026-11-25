@@ -21,6 +21,7 @@ export default function SwipeDeck({ profiles }: { profiles: Profile[] }) {
   const [exit, setExit] = useState<Exit>(null);
   const [drag, setDrag] = useState(0);
   const [matched, setMatched] = useState<Profile | null>(null);
+  const [dragging, setDragging] = useState(false);
   const start = useRef<number | null>(null);
 
   const current = profiles[index % profiles.length];
@@ -58,15 +59,17 @@ export default function SwipeDeck({ profiles }: { profiles: Profile[] }) {
         className="absolute inset-0 cursor-grab touch-none active:cursor-grabbing"
         style={{
           transform,
-          transition: start.current !== null && !exit ? "none" : "transform 320ms cubic-bezier(.2,.8,.2,1)",
+          transition: dragging && !exit ? "none" : "transform 320ms cubic-bezier(.2,.8,.2,1)",
         }}
         onPointerDown={(e) => {
           start.current = e.clientX;
+          setDragging(true);
           (e.target as HTMLElement).setPointerCapture(e.pointerId);
         }}
         onPointerMove={(e) => start.current !== null && setDrag(e.clientX - start.current)}
         onPointerUp={() => {
           start.current = null;
+          setDragging(false);
           if (drag > 90) decide("right");
           else if (drag < -90) decide("left");
           else setDrag(0);
