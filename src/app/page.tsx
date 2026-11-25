@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SwipeDeck, { type Profile } from "./swipe-deck";
 import Features from "./features";
+import HowItWorks from "./how-it-works";
 
 import srijana from "../../public/photos/srijana.jpg";
 import prakriti from "../../public/photos/prakriti.jpg";
@@ -37,7 +38,7 @@ export default function Home() {
         </a>
         <nav className="hidden items-center gap-9 text-[15px] font-medium text-plum-700 md:flex">
           <a href="#features" className="transition hover:text-rose-600">Discover</a>
-          <a href="#" className="transition hover:text-rose-600">How it works</a>
+          <a href="#how-it-works" className="transition hover:text-rose-600">How it works</a>
           <a href="#" className="transition hover:text-rose-600">Safety</a>
           <a href="#" className="transition hover:text-rose-600">Premium</a>
         </nav>
@@ -171,6 +172,7 @@ export default function Home() {
       </section>
 
       <Features />
+      <HowItWorks />
     </main>
   );
 }
