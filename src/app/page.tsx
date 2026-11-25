@@ -48,7 +48,7 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="mx-auto grid max-w-7xl items-center gap-16 px-6 pb-16 pt-8 lg:min-h-[calc(100svh-88px)] lg:grid-cols-[1.15fr_1fr] lg:pb-8 lg:pt-0">
+      <section className="mx-auto grid max-w-7xl items-center gap-16 px-6 pb-12 pt-8 lg:grid-cols-[1.15fr_1fr] lg:pb-14 lg:pt-6">
         <div className="text-center lg:text-left">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-sm font-medium text-plum-700 shadow-sm ring-1 ring-plum-900/5 backdrop-blur">
             <span className="relative flex h-2.5 w-2.5">
