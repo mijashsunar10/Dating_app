@@ -130,21 +130,13 @@ function Card({ p, className = "" }: { p: Profile; className?: string }) {
           {p.match}% match
         </span>
       </div>
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-plum-900 via-plum-900/70 to-transparent p-5 pb-12 pt-20 text-white">
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-plum-900 via-plum-900/40 to-transparent p-5 pb-14 pt-24 text-white">
         <p className="text-2xl font-semibold">
           {p.name}, {p.age}
         </p>
         <p className="mt-0.5 text-sm text-white/80">
           📍 {p.place} · {p.km} km away
         </p>
-        <p className="mt-2 line-clamp-2 text-sm text-white/90">{p.bio}</p>
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {p.tags.map((t) => (
-            <span key={t} className="rounded-full bg-white/15 px-2.5 py-1 text-xs font-medium backdrop-blur">
-              {t}
-            </span>
-          ))}
-        </div>
       </div>
     </div>
   );
