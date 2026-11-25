@@ -35,19 +35,19 @@ export default function Features() {
 
   return (
     <section id="features" className="relative mx-auto w-full max-w-7xl scroll-mt-6 px-6 pb-24 pt-10 lg:pt-4">
-      <div className="relative overflow-hidden rounded-[2.5rem] bg-plum-900 px-6 py-12 sm:px-12 lg:px-16 lg:py-14">
+      <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-rose-50 via-white to-plum-50 px-6 shadow-xl shadow-rose-500/5 ring-1 ring-rose-100 py-12 sm:px-12 lg:px-16 lg:py-14">
         {/* glow */}
-        <div className="pointer-events-none absolute -right-32 -top-32 h-[28rem] w-[28rem] rounded-full bg-rose-500/30 blur-[120px]" />
-        <div className="pointer-events-none absolute -bottom-40 left-10 h-[24rem] w-[24rem] rounded-full bg-coral/20 blur-[120px]" />
+        <div className="pointer-events-none absolute -right-32 -top-32 h-[28rem] w-[28rem] rounded-full bg-rose-200/70 blur-[120px]" />
+        <div className="pointer-events-none absolute -bottom-40 left-10 h-[24rem] w-[24rem] rounded-full bg-peach/60 blur-[120px]" />
 
         <div className="relative grid items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-24">
           {/* Left: heading + feature tabs */}
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-400">Why Amora</p>
-            <h2 className="mt-3 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-600">Why Amora</p>
+            <h2 className="mt-3 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-plum-900 sm:text-5xl">
               Dating, <span className="text-love italic">done right.</span>
             </h2>
-            <p className="mt-4 max-w-lg text-white/60">The best of every dating app — safer, smarter and made for Nepal.</p>
+            <p className="mt-4 max-w-lg text-lg text-plum-700">The best of every dating app — safer, smarter and made for Nepal.</p>
 
             <div className="mt-8 space-y-1.5" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
               {features.map((item, i) => {
@@ -56,16 +56,16 @@ export default function Features() {
                   <button
                     key={item.key}
                     onClick={() => setActive(i)}
-                    className={`group relative block w-full overflow-hidden rounded-2xl p-4 text-left transition ${on ? "bg-white/[0.07] ring-1 ring-white/10" : "hover:bg-white/[0.04]"}`}
+                    className={`group relative block w-full overflow-hidden rounded-2xl p-4 text-left transition ${on ? "bg-white shadow-lg shadow-rose-500/10 ring-1 ring-rose-100" : "hover:bg-white/70"}`}
                   >
                     <div className="flex items-center gap-4">
-                      <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl text-lg transition ${on ? "bg-love text-white shadow-lg shadow-rose-500/40" : "bg-white/5 text-white/60"}`}>
+                      <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl text-lg transition ${on ? "bg-love text-white shadow-lg shadow-rose-500/40" : "bg-rose-50 text-rose-500"}`}>
                         {item.icon}
                       </span>
-                      <span className={`text-lg font-semibold transition ${on ? "text-white" : "text-white/55 group-hover:text-white/80"}`}>{item.title}</span>
+                      <span className={`text-lg font-semibold transition ${on ? "text-plum-900" : "text-plum-500 group-hover:text-plum-800"}`}>{item.title}</span>
                     </div>
                     <div className={`grid transition-all duration-500 ${on ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-                      <p className="overflow-hidden pl-[3.75rem] text-[15px] leading-relaxed text-white/65">
+                      <p className="overflow-hidden pl-[3.75rem] text-[15px] leading-relaxed text-plum-700">
                         <span className="block pt-1.5">{item.desc}</span>
                       </p>
                     </div>
@@ -83,12 +83,14 @@ export default function Features() {
           </div>
 
           {/* Right: phone that changes per feature */}
-          <div className="relative mx-auto">
-            <div key={f.key + "-chip"} className="animate-pop absolute -left-24 top-28 z-10 hidden whitespace-nowrap rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-plum-900 shadow-2xl sm:block">
+          <div className="relative isolate mx-auto">
+            <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-rose-300/50 via-coral/25 to-plum-100/60 blur-3xl" />
+            <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-rose-200/70" />
+            <div key={f.key + "-chip"} className="animate-pop absolute -left-24 top-28 z-10 hidden whitespace-nowrap rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-plum-900 shadow-xl ring-1 ring-plum-900/5 sm:block">
               <span className="mr-1.5 text-rose-500">{f.icon}</span>
               {f.chip}
             </div>
-            <div className="rounded-[2.8rem] bg-gradient-to-b from-plum-700 to-plum-800 p-[9px] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6),inset_0_0_0_2px_rgba(255,255,255,0.08)]">
+            <div className="rounded-[2.8rem] bg-gradient-to-b from-plum-700 via-plum-900 to-plum-900 p-[9px] shadow-[0_40px_80px_-20px_rgba(28,15,46,0.45),inset_0_0_0_2px_rgba(255,255,255,0.08)]">
               <div className="relative h-[540px] w-[270px] overflow-hidden rounded-[2.3rem] bg-cream">
                 <span className="absolute left-1/2 top-2 z-20 h-5 w-20 -translate-x-1/2 rounded-full bg-black" />
                 <div key={f.key} className="animate-pop h-full">
