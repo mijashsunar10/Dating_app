@@ -28,17 +28,17 @@ export default function Features() {
 
       <section id="features" className="mx-auto w-full max-w-7xl scroll-mt-6 px-6 pb-24 pt-16 lg:pt-20">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-          <h2 className="max-w-2xl font-display text-5xl font-semibold leading-[1.02] tracking-tight text-plum-900 sm:text-6xl">
+          <h2 className="max-w-xl font-display text-4xl font-semibold leading-[1.08] tracking-tight text-plum-900 sm:text-5xl">
             A lot has changed since your last <span className="text-love italic">swipe.</span>
           </h2>
-          <p className="max-w-sm text-lg leading-relaxed text-plum-700">
+          <p className="max-w-sm leading-relaxed text-plum-700 lg:pb-1.5">
             New ways to meet, made for how Nepal actually dates. Less small talk, more real plans.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {/* Double date */}
-          <FeatureCard photo={srijana} chip="👯 Double Date" title="Bring your bestie" text="Pair up with a friend and match with another duo. Way less awkward." className="lg:translate-y-10">
+          <FeatureCard photo={srijana} chip="👯 Double Date" title="Bring your bestie" text="Pair up with a friend and match with another duo.">
             <div className="flex items-center gap-2 rounded-2xl bg-white/95 p-2.5 pr-3 shadow-lg">
               <Duo a={srijana} b={anisha} />
               <span className="text-love text-lg">♥</span>
@@ -64,7 +64,7 @@ export default function Features() {
           </FeatureCard>
 
           {/* Video date */}
-          <FeatureCard photo={anisha} chip="🎥 Video Date" title="See the spark" text="Face-to-face in the app before you meet. Your number stays private." className="lg:translate-y-10">
+          <FeatureCard photo={anisha} chip="🎥 Video Date" title="See the spark" text="Meet face to face in the app. Your number stays private.">
             <div className="flex items-end justify-between">
               <span className="flex items-center gap-1.5 rounded-full bg-black/40 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-red-500" /> Live · 04:12
@@ -76,7 +76,7 @@ export default function Features() {
           </FeatureCard>
 
           {/* Verified */}
-          <FeatureCard photo={rohan} chip="✔ Verified" title="Real ones only" text="Every profile passes a live selfie check. No bots. No catfish.">
+          <FeatureCard photo={rohan} chip="✔ Verified" title="Real ones only" text="Every profile passes a live selfie check. No bots.">
             <div className="flex items-center gap-3 rounded-2xl bg-white/95 p-2.5 shadow-lg">
               <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full ring-2 ring-sky-400">
                 <Image src={rohan} alt="" fill sizes="40px" className="object-cover" />
@@ -102,34 +102,26 @@ function FeatureCard({
   title,
   text,
   children,
-  className = "",
 }: {
   photo: StaticImageData;
   chip: string;
   title: string;
   text: string;
   children: React.ReactNode;
-  className?: string;
 }) {
   return (
-    <a
-      href="#"
-      className={`group relative block h-[460px] overflow-hidden rounded-[2rem] shadow-xl shadow-plum-900/15 ring-1 ring-plum-900/5 transition duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/25 ${className}`}
-    >
-      <Image src={photo} alt="" fill sizes="(min-width:1024px) 300px, (min-width:640px) 50vw, 100vw" placeholder="blur" className="object-cover transition duration-700 group-hover:scale-110" />
-      <div className="absolute inset-0 bg-gradient-to-t from-plum-900 via-plum-900/30 to-transparent" />
-
-      <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3.5 py-1.5 text-xs font-bold text-plum-900 shadow backdrop-blur">{chip}</span>
-
-      <div className="absolute inset-x-0 bottom-0 p-5">
-        <div className="mb-5">{children}</div>
-        <h3 className="font-display text-3xl font-semibold text-white">{title}</h3>
-        <p className="mt-1.5 text-sm leading-relaxed text-white/80">{text}</p>
-        <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-rose-200 transition group-hover:gap-2 group-hover:text-white">
-          Learn more <span>→</span>
-        </span>
+    <div className="group rounded-3xl bg-white p-2 shadow-sm ring-1 ring-plum-900/5 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-plum-900/5">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-[1.25rem]">
+        <Image src={photo} alt="" fill sizes="(min-width:1024px) 300px, (min-width:640px) 50vw, 100vw" placeholder="blur" className="object-cover transition duration-700 group-hover:scale-105" />
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-plum-900/50 to-transparent" />
+        <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold text-plum-900 shadow-sm backdrop-blur">{chip}</span>
+        <div className="absolute inset-x-3 bottom-3">{children}</div>
       </div>
-    </a>
+      <div className="px-3 pb-4 pt-5">
+        <h3 className="text-lg font-semibold text-plum-900">{title}</h3>
+        <p className="mt-1.5 text-[15px] leading-relaxed text-plum-700">{text}</p>
+      </div>
+    </div>
   );
 }
 
