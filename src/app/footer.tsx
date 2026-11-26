@@ -71,7 +71,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-rose-100 pt-6 text-sm text-plum-500 sm:flex-row">
-        <p>© {new Date().getFullYear()} Amora. All rights reserved.</p>
+        <p>© 2026 Amora. All rights reserved.</p>
         <p className="flex items-center gap-1.5">
           Made with <span className="text-rose-500">♥</span> in Nepal 🇳🇵
         </p>
