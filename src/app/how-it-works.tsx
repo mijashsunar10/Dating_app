@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import srijana from "../../public/photos/srijana.jpg";
 import prakriti from "../../public/photos/prakriti.jpg";
@@ -31,7 +32,8 @@ const steps = [
   },
 ];
 
-export default function HowItWorks() {
+export default function HowItWorks({ asPage = false }: { asPage?: boolean }) {
+  const Heading = asPage ? "h1" : "h2";
   return (
     <section id="how-it-works" className="relative isolate mx-auto w-full max-w-7xl scroll-mt-6 px-6 pb-24 pt-10">
       {/* soft background glows — blend into the page, no hard edges */}
@@ -45,9 +47,9 @@ export default function HowItWorks() {
         <p className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-rose-600 shadow-sm ring-1 ring-rose-100">
           <span className="h-1.5 w-1.5 rounded-full bg-rose-500" /> How it works
         </p>
-        <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-plum-900 sm:text-5xl">
+        <Heading className="mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-plum-900 sm:text-5xl">
           From hello to <span className="text-love italic">first date</span> in three steps.
-        </h2>
+        </Heading>
         <p className="mt-4 text-lg text-plum-700">Simple, safe and designed to get you off the app and onto a real date.</p>
       </div>
 
@@ -94,13 +96,13 @@ export default function HowItWorks() {
       </div>
 
       <div className="mt-16 flex flex-col items-center gap-3">
-        <a
-          href="#"
+        <Link
+          href="/discover"
           className="bg-love group inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white shadow-lg shadow-rose-500/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-rose-500/40"
         >
           Create my free profile
           <span className="transition group-hover:translate-x-1">→</span>
-        </a>
+        </Link>
         <p className="text-sm text-plum-500">Free to join · Takes less than 2 minutes</p>
       </div>
     </section>

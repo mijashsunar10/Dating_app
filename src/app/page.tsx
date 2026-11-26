@@ -23,27 +23,6 @@ export default function Home() {
         <div className="absolute bottom-[-12rem] left-1/3 h-[28rem] w-[28rem] rounded-full bg-peach/60 blur-[120px]" />
       </div>
 
-      {/* Nav */}
-      <header className="sticky top-0 z-50 border-b border-plum-900/5 bg-white/70 backdrop-blur-lg">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#" className="flex items-center gap-2.5 font-display text-2xl font-semibold tracking-tight text-plum-900">
-            <span className="grid h-10 w-10 place-items-center rounded-2xl bg-love text-lg text-white shadow-lg shadow-rose-500/30">♥</span>
-            Amora
-          </a>
-          <nav className="hidden items-center gap-9 text-[15px] font-medium text-plum-700 md:flex">
-            <Link href="/discover" className="transition hover:text-rose-600">Discover</Link>
-            <a href="#how-it-works" className="transition hover:text-rose-600">How it works</a>
-            <a href="#stories" className="transition hover:text-rose-600">Stories</a>
-            <a href="#safety" className="transition hover:text-rose-600">Safety</a>
-            <a href="#" className="transition hover:text-rose-600">Premium</a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <a href="#" className="hidden rounded-full px-5 py-2.5 text-sm font-semibold text-plum-800 transition hover:bg-white/70 sm:block">Log in</a>
-            <Link href="/discover" className="rounded-full bg-plum-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-plum-800">Join free</Link>
-          </div>
-        </div>
-      </header>
-
       {/* Hero */}
       <section className="mx-auto grid max-w-7xl items-center gap-16 px-6 pb-12 pt-8 lg:grid-cols-[1.15fr_1fr] lg:pb-14 lg:pt-6">
         <div className="text-center lg:text-left">

@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 const columns = [
-  { title: "Amora", links: [{ label: "Discover", href: "#features" }, { label: "How it works", href: "#how-it-works" }, { label: "Love stories", href: "#stories" }, { label: "Premium", href: "#" }] },
-  { title: "Safety", links: [{ label: "Safety tips", href: "#safety" }, { label: "Verification", href: "#safety" }, { label: "Report a user", href: "#" }, { label: "Community guidelines", href: "#" }] },
-  { title: "Company", links: [{ label: "About us", href: "#" }, { label: "Careers", href: "#" }, { label: "Press", href: "#" }, { label: "FAQ", href: "#faq" }] },
+  { title: "Amora", links: [{ label: "Discover", href: "/discover" }, { label: "How it works", href: "/how-it-works" }, { label: "Love stories", href: "/#stories" }, { label: "Premium", href: "#" }] },
+  { title: "Safety", links: [{ label: "Safety tips", href: "/#safety" }, { label: "Verification", href: "/#safety" }, { label: "Report a user", href: "#" }, { label: "Community guidelines", href: "#" }] },
+  { title: "Company", links: [{ label: "About us", href: "#" }, { label: "Careers", href: "#" }, { label: "Press", href: "#" }, { label: "FAQ", href: "/#faq" }] },
 ];
 
 const socials = [
@@ -21,21 +23,21 @@ export default function Footer() {
           Your next chiya date is <span className="text-love italic">one swipe away.</span>
         </h2>
         <p className="relative mx-auto mt-4 max-w-md text-lg text-plum-700">Join thousands of verified singles across Nepal. Free, safe and made for you.</p>
-        <a
-          href="#"
+        <Link
+          href="/discover"
           className="bg-love group relative mt-8 inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white shadow-lg shadow-rose-500/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-rose-500/40"
         >
           Start matching — it&apos;s free <span className="transition group-hover:translate-x-1">→</span>
-        </a>
+        </Link>
       </div>
 
       {/* Links */}
       <div className="mt-16 grid gap-10 border-t border-rose-100 pt-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <a href="#" className="flex items-center gap-2.5 font-display text-2xl font-semibold tracking-tight text-plum-900">
+          <Link href="/" className="flex items-center gap-2.5 font-display text-2xl font-semibold tracking-tight text-plum-900">
             <span className="bg-love grid h-10 w-10 place-items-center rounded-2xl text-lg text-white shadow-lg shadow-rose-500/30">♥</span>
             Amora
-          </a>
+          </Link>
           <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-plum-700">Real people. Real connections. The dating platform made for how Nepal actually dates.</p>
           <div className="mt-6 flex gap-2.5">
             {socials.map((s) => (
@@ -59,9 +61,9 @@ export default function Footer() {
             <ul className="mt-4 space-y-3">
               {c.links.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-[15px] text-plum-700 transition hover:text-rose-600">
+                  <Link href={l.href} className="text-[15px] text-plum-700 transition hover:text-rose-600">
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
