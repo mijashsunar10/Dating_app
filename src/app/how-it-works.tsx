@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 
 import srijana from "../../public/photos/srijana.jpg";
 import prakriti from "../../public/photos/prakriti.jpg";
