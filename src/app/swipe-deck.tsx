@@ -1,22 +1,21 @@
 "use client";
 
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import { useRef, useState } from "react";
+import type { Profile } from "@/lib/profiles";
 
-export type Profile = {
-  name: string;
-  age: number;
-  place: string;
-  km: number;
-  match: number;
-  bio: string;
-  tags: string[];
-  photo: StaticImageData;
-};
+export type { Profile };
+export type Decision = "left" | "right" | "up";
+type Exit = Decision | null;
 
-type Exit = "left" | "right" | "up" | null;
-
-export default function SwipeDeck({ profiles }: { profiles: Profile[] }) {
+export default function SwipeDeck({
+  profiles,
+  onDecide,
+}: {
+  profiles: Profile[];
+  /** Called once per swipe with the profile that was decided on and the next one shown. */
+  onDecide?: (decided: Profile, dir: Decision, next: Profile) => void;
+}) {
   const [index, setIndex] = useState(0);
   const [exit, setExit] = useState<Exit>(null);
   const [drag, setDrag] = useState(0);
@@ -30,6 +29,7 @@ export default function SwipeDeck({ profiles }: { profiles: Profile[] }) {
   function decide(dir: Exclude<Exit, null>) {
     if (exit) return;
     setExit(dir);
+    onDecide?.(current, dir, next);
     if (dir !== "left" && (index % 2 === 0 || dir === "up")) {
       setTimeout(() => setMatched(current), 250);
     }

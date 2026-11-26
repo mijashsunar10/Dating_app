@@ -1,5 +1,6 @@
 import Image from "next/image";
-import SwipeDeck, { type Profile } from "./swipe-deck";
+import Link from "next/link";
+import SwipeDeck from "./swipe-deck";
 import Features from "./features";
 import HowItWorks from "./how-it-works";
 import SuccessStories from "./success-stories";
@@ -7,22 +8,10 @@ import Safety from "./safety";
 import Faq from "./faq";
 import Footer from "./footer";
 
-import srijana from "../../public/photos/srijana.jpg";
-import prakriti from "../../public/photos/prakriti.jpg";
-import anisha from "../../public/photos/anisha.jpg";
-import aarav from "../../public/photos/aarav.jpg";
-import rohan from "../../public/photos/rohan.jpg";
+import { profiles } from "@/lib/profiles";
 
-// Demo profiles: fictional names on free Unsplash photos (see public/photos/CREDITS.md).
-const profiles: Profile[] = [
-  { name: "Srijana", age: 24, place: "Kathmandu", km: 2, match: 94, bio: "Momo critic, sunset chaser. Looking for someone to explore Patan with.", tags: ["Travel", "Momo", "Photography"], photo: srijana },
-  { name: "Rohan", age: 27, place: "Lalitpur", km: 4, match: 89, bio: "Weekend hiker, weekday coder. Will plan the Nagarkot trip.", tags: ["Hiking", "Coffee", "Guitar"], photo: rohan },
-  { name: "Prakriti", age: 23, place: "Pokhara", km: 6, match: 91, bio: "Lakeside walks and long playlists. Teach me your favourite song.", tags: ["Music", "Yoga", "Books"], photo: prakriti },
-  { name: "Aarav", age: 28, place: "Bhaktapur", km: 3, match: 87, bio: "Architect by day, street-food explorer by night.", tags: ["Design", "Food", "Football"], photo: aarav },
-  { name: "Anisha", age: 25, place: "Kathmandu", km: 1, match: 92, bio: "Fashion, films and chiya. Tell me your best movie pick.", tags: ["Fashion", "Movies", "Chiya"], photo: anisha },
-];
-
-const avatars = [srijana, rohan, prakriti, aarav, anisha];
+const avatars = profiles.map((p) => p.photo);
+const photo = (name: string) => profiles.find((p) => p.name === name)!.photo;
 
 export default function Home() {
   return (
@@ -50,7 +39,7 @@ export default function Home() {
           </nav>
           <div className="flex items-center gap-2">
             <a href="#" className="hidden rounded-full px-5 py-2.5 text-sm font-semibold text-plum-800 transition hover:bg-white/70 sm:block">Log in</a>
-            <a href="#" className="rounded-full bg-plum-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-plum-800">Join free</a>
+            <Link href="/discover" className="rounded-full bg-plum-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-plum-800">Join free</Link>
           </div>
         </div>
       </header>
@@ -77,10 +66,10 @@ export default function Home() {
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
-            <a href="#" className="group inline-flex items-center gap-2 rounded-full bg-love px-8 py-4 text-base font-semibold text-white shadow-xl shadow-rose-500/30 transition hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-rose-500/40">
+            <Link href="/discover" className="group inline-flex items-center gap-2 rounded-full bg-love px-8 py-4 text-base font-semibold text-white shadow-xl shadow-rose-500/30 transition hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-rose-500/40">
               Start matching — it&apos;s free
               <span className="transition group-hover:translate-x-1">→</span>
-            </a>
+            </Link>
             <a href="#" className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-base font-semibold text-plum-900 shadow-sm ring-1 ring-plum-900/10 transition hover:ring-plum-900/20">
               <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.72-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.66-.39 6.6 1.1 8.75.73 1.05 1.6 2.24 2.73 2.2 1.1-.05 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.32-3.5zM14.2 6.14c.6-.74 1.01-1.75.9-2.77-.87.04-1.93.58-2.55 1.31-.56.65-1.05 1.69-.92 2.69.97.07 1.96-.49 2.57-1.23z"/></svg>
               Get the app
@@ -119,16 +108,16 @@ export default function Home() {
 
           {/* Fanned photos behind the phone */}
           <div className="absolute -left-36 top-16 -z-10 hidden h-64 w-48 -rotate-12 overflow-hidden rounded-3xl shadow-2xl ring-4 ring-white lg:block">
-            <Image src={anisha} alt="" fill sizes="192px" placeholder="blur" className="object-cover" />
+            <Image src={photo("Anisha")} alt="" fill sizes="192px" placeholder="blur" className="object-cover" />
           </div>
           <div className="absolute -right-36 top-40 -z-10 hidden h-64 w-48 rotate-12 overflow-hidden rounded-3xl shadow-2xl ring-4 ring-white lg:block">
-            <Image src={aarav} alt="" fill sizes="192px" placeholder="blur" className="object-cover" />
+            <Image src={photo("Aarav")} alt="" fill sizes="192px" placeholder="blur" className="object-cover" />
           </div>
 
           {/* Floating chips (placed so they never cover the card's content) */}
           <div className="animate-float absolute -left-72 bottom-4 z-20 hidden items-center gap-3 rounded-2xl bg-white/95 p-3 pr-5 shadow-xl ring-1 ring-plum-900/5 backdrop-blur xl:flex">
             <span className="relative h-11 w-11 overflow-hidden rounded-full ring-2 ring-rose-200">
-              <Image src={rohan} alt="" fill sizes="44px" className="object-cover" />
+              <Image src={photo("Rohan")} alt="" fill sizes="44px" className="object-cover" />
               <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-emerald-500 ring-2 ring-white" />
             </span>
             <div>
