@@ -12,13 +12,13 @@ export default function Features() {
   return (
     <>
       {/* Marquee ribbon */}
-      <div className="relative z-10 -ml-[5%] mt-4 w-[110%] -rotate-2 bg-love py-4 shadow-xl shadow-rose-500/25">
+      <div className="relative z-10 -ml-[5%] mt-4 w-[110%] -rotate-2 bg-love py-2 shadow-xl shadow-rose-500/25">
         <div className="flex w-max animate-marquee">
           {[0, 1].map((n) => (
             <div key={n} aria-hidden={n === 1} className="flex shrink-0 items-center">
               {ribbon.map((t) => (
-                <span key={t} className="flex items-center gap-8 pr-8 font-display text-2xl font-semibold italic text-white sm:text-3xl">
-                  {t} <span className="text-lg not-italic text-white/70">✦</span>
+                <span key={t} className="flex items-center gap-6 pr-6 font-display text-lg font-semibold italic text-white sm:text-xl">
+                  {t} <span className="text-sm not-italic text-white/70">✦</span>
                 </span>
               ))}
             </div>
