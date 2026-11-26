@@ -31,7 +31,7 @@ export default function Home() {
             Amora
           </a>
           <nav className="hidden items-center gap-9 text-[15px] font-medium text-plum-700 md:flex">
-            <a href="#features" className="transition hover:text-rose-600">Discover</a>
+            <Link href="/discover" className="transition hover:text-rose-600">Discover</Link>
             <a href="#how-it-works" className="transition hover:text-rose-600">How it works</a>
             <a href="#stories" className="transition hover:text-rose-600">Stories</a>
             <a href="#safety" className="transition hover:text-rose-600">Safety</a>
