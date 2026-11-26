@@ -26,7 +26,7 @@ export default function Features() {
         </div>
       </div>
 
-      <section id="features" className="mx-auto w-full max-w-7xl scroll-mt-6 px-6 pb-24 pt-16 lg:pt-20">
+      <section id="features" className="mx-auto w-full max-w-7xl scroll-mt-6 px-6 pb-12 pt-16 lg:pt-20">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <h2 className="max-w-xl font-display text-4xl font-semibold leading-[1.08] tracking-tight text-plum-900 sm:text-5xl">
             A lot has changed since your last <span className="text-love italic">swipe.</span>
