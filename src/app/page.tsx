@@ -4,6 +4,8 @@ import Features from "./features";
 import HowItWorks from "./how-it-works";
 import SuccessStories from "./success-stories";
 import Safety from "./safety";
+import Faq from "./faq";
+import Footer from "./footer";
 
 import srijana from "../../public/photos/srijana.jpg";
 import prakriti from "../../public/photos/prakriti.jpg";
@@ -178,6 +180,8 @@ export default function Home() {
       <HowItWorks />
       <SuccessStories />
       <Safety />
+      <Faq />
+      <Footer />
     </main>
   );
 }
