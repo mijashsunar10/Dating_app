@@ -26,7 +26,7 @@ const avatars = [srijana, rohan, prakriti, aarav, anisha];
 
 export default function Home() {
   return (
-    <main className="relative isolate min-h-screen overflow-hidden">
+    <main className="relative isolate min-h-screen overflow-clip">
       {/* Soft background mesh */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -left-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-rose-200/70 blur-[120px]" />
@@ -35,21 +35,23 @@ export default function Home() {
       </div>
 
       {/* Nav */}
-      <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <a href="#" className="flex items-center gap-2.5 font-display text-2xl font-semibold tracking-tight text-plum-900">
-          <span className="grid h-10 w-10 place-items-center rounded-2xl bg-love text-lg text-white shadow-lg shadow-rose-500/30">♥</span>
-          Amora
-        </a>
-        <nav className="hidden items-center gap-9 text-[15px] font-medium text-plum-700 md:flex">
-          <a href="#features" className="transition hover:text-rose-600">Discover</a>
-          <a href="#how-it-works" className="transition hover:text-rose-600">How it works</a>
-          <a href="#stories" className="transition hover:text-rose-600">Stories</a>
-          <a href="#safety" className="transition hover:text-rose-600">Safety</a>
-          <a href="#" className="transition hover:text-rose-600">Premium</a>
-        </nav>
-        <div className="flex items-center gap-2">
-          <a href="#" className="hidden rounded-full px-5 py-2.5 text-sm font-semibold text-plum-800 transition hover:bg-white/70 sm:block">Log in</a>
-          <a href="#" className="rounded-full bg-plum-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-plum-800">Join free</a>
+      <header className="sticky top-0 z-50 border-b border-plum-900/5 bg-white/70 backdrop-blur-lg">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <a href="#" className="flex items-center gap-2.5 font-display text-2xl font-semibold tracking-tight text-plum-900">
+            <span className="grid h-10 w-10 place-items-center rounded-2xl bg-love text-lg text-white shadow-lg shadow-rose-500/30">♥</span>
+            Amora
+          </a>
+          <nav className="hidden items-center gap-9 text-[15px] font-medium text-plum-700 md:flex">
+            <a href="#features" className="transition hover:text-rose-600">Discover</a>
+            <a href="#how-it-works" className="transition hover:text-rose-600">How it works</a>
+            <a href="#stories" className="transition hover:text-rose-600">Stories</a>
+            <a href="#safety" className="transition hover:text-rose-600">Safety</a>
+            <a href="#" className="transition hover:text-rose-600">Premium</a>
+          </nav>
+          <div className="flex items-center gap-2">
+            <a href="#" className="hidden rounded-full px-5 py-2.5 text-sm font-semibold text-plum-800 transition hover:bg-white/70 sm:block">Log in</a>
+            <a href="#" className="rounded-full bg-plum-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-plum-800">Join free</a>
+          </div>
         </div>
       </header>
 

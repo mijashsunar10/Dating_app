@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Keep anchor targets clear of the sticky header */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
 /*
   Amora palette — "Rhododendron"
   - rose  : primary. Inspired by Nepal's national flower — warm, romantic, softer than Tinder's red-orange.
