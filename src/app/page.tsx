@@ -3,6 +3,7 @@ import SwipeDeck, { type Profile } from "./swipe-deck";
 import Features from "./features";
 import HowItWorks from "./how-it-works";
 import SuccessStories from "./success-stories";
+import Safety from "./safety";
 
 import srijana from "../../public/photos/srijana.jpg";
 import prakriti from "../../public/photos/prakriti.jpg";
@@ -41,7 +42,7 @@ export default function Home() {
           <a href="#features" className="transition hover:text-rose-600">Discover</a>
           <a href="#how-it-works" className="transition hover:text-rose-600">How it works</a>
           <a href="#stories" className="transition hover:text-rose-600">Stories</a>
-          <a href="#" className="transition hover:text-rose-600">Safety</a>
+          <a href="#safety" className="transition hover:text-rose-600">Safety</a>
           <a href="#" className="transition hover:text-rose-600">Premium</a>
         </nav>
         <div className="flex items-center gap-2">
@@ -176,6 +177,7 @@ export default function Home() {
       <Features />
       <HowItWorks />
       <SuccessStories />
+      <Safety />
     </main>
   );
 }
